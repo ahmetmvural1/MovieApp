@@ -1,3 +1,72 @@
-PODFILE CHECKSUM: 020f0c3dbd741796acb63cbc2ed8ab9b57feb07c
+PODS:
+  - Alamofire (4.9.1)
+  - FontAwesome.swift (1.8.3)
+  - lottie-ios (3.1.5)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
+  - SDWebImage (5.4.2):
+    - SDWebImage/Core (= 5.4.2)
+  - SDWebImage/Core (5.4.2)
+  - SimpleApiClient (0.1.0):
+    - Alamofire (~> 4.5)
+    - RxSwift (~> 4.0)
+  - SVProgressHUD (2.2.5)
+  - SwifterSwift (5.1.0):
+    - SwifterSwift/AppKit (= 5.1.0)
+    - SwifterSwift/CoreGraphics (= 5.1.0)
+    - SwifterSwift/CoreLocation (= 5.1.0)
+    - SwifterSwift/Dispatch (= 5.1.0)
+    - SwifterSwift/Foundation (= 5.1.0)
+    - SwifterSwift/MapKit (= 5.1.0)
+    - SwifterSwift/SceneKit (= 5.1.0)
+    - SwifterSwift/SpriteKit (= 5.1.0)
+    - SwifterSwift/SwiftStdlib (= 5.1.0)
+    - SwifterSwift/UIKit (= 5.1.0)
+  - SwifterSwift/AppKit (5.1.0)
+  - SwifterSwift/CoreGraphics (5.1.0)
+  - SwifterSwift/CoreLocation (5.1.0)
+  - SwifterSwift/Dispatch (5.1.0)
+  - SwifterSwift/Foundation (5.1.0)
+  - SwifterSwift/MapKit (5.1.0)
+  - SwifterSwift/SceneKit (5.1.0)
+  - SwifterSwift/SpriteKit (5.1.0)
+  - SwifterSwift/SwiftStdlib (5.1.0)
+  - SwifterSwift/UIKit (5.1.0)
+
+DEPENDENCIES:
+  - FontAwesome.swift
+  - lottie-ios
+  - RxCocoa
+  - RxSwift
+  - SDWebImage (~> 5.0)
+  - SimpleApiClient
+  - SVProgressHUD
+  - SwifterSwift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - FontAwesome.swift
+    - lottie-ios
+    - RxCocoa
+    - RxSwift
+    - SDWebImage
+    - SimpleApiClient
+    - SVProgressHUD
+    - SwifterSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  FontAwesome.swift: 2a3235131a6caffc6b2ccba318e94d793b2fd342
+  lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SDWebImage: 4ca2dc4eefae4224bea8f504251cda485a363745
+  SimpleApiClient: 1c7190075024e807ef635fd683b255546fb50992
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwifterSwift: a9e8e144832638c2850b43da5feaf9598c6ad65b
+
+PODFILE CHECKSUM: 8b4ddac89b23144b59c3ec199e2734e85c00136c
 
 COCOAPODS: 1.8.4
