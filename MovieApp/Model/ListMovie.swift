@@ -12,31 +12,26 @@ import Foundation
 struct ListMovie: Decodable {
     
     var results: [Results]
-
+    var total_pages: Int
 
     
     private enum CodingKeys: String, CodingKey{
         case results = "results"
+        case total_pages = "total_pages"
     }
 }
 
 struct Results: Decodable {
     var id: Int
-    var original_name: String
+    var name: String
     var poster_path: String
-    var vote_average: String
-    var first_air_date: String
-    var original_language: String
-    var overview: String
+    var vote_average: Float
     
     private enum CodingKeys: String, CodingKey{
         case id = "id"
-        case original_name = "original_name"
+        case name = "name"
         case poster_path = "poster_path"
         case vote_average = "vote_average"
-        case first_air_date = "first_air_date"
-        case original_language = "original_language"
-        case overview = "overview"
         
      }
 }

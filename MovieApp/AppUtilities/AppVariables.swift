@@ -9,3 +9,5 @@
 let apiURL = "https://api.themoviedb.org"
 let apiKey = "e112ed72df8da5c3b38e4e6579896bc6"
 let imageURL = "https://image.tmdb.org/t/p/original"
+var MovieArray : [(id: Int, name: String, poster_path:String, vote_average: Float)] = []
+var total_pages = 0
