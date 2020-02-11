@@ -22,6 +22,8 @@ class DetailMovieVC: UIViewController {
     var items = [[Any]]()
     var disposeBag = DisposeBag()
     
+    
+    @IBOutlet weak var favOutlet: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var movieDescription: UITextView!
     @IBOutlet weak var detailPhoto: UIImageView!
@@ -30,6 +32,18 @@ class DetailMovieVC: UIViewController {
         super.viewDidLoad()
        
         getMovieDetail(movieID: movieID)
+        //fav Button
+        if UserDefaults.standard.array(forKey: "favMovieArray") != nil{
+            favIDs = UserDefaults.standard.array(forKey: "favMovieArray") as! [Int]
+        }
+        if favIDs.contains(movieID) {
+            favOutlet.titleLabel?.font = UIFont.fontAwesome(ofSize: 30, style: .solid)
+            favOutlet.setTitle(String.fontAwesomeIcon(name: .star), for: .normal)
+        }else{
+            favOutlet.titleLabel?.font = UIFont.fontAwesome(ofSize: 30, style: .light)
+            favOutlet.setTitle(String.fontAwesomeIcon(name: .star), for: .normal)
+        }
+        
     }
     
 
@@ -78,7 +92,23 @@ class DetailMovieVC: UIViewController {
         }
     }
     
-
+    @IBAction func favButton(_ sender: Any) {
+        if UserDefaults.standard.array(forKey: "favMovieArray") != nil{
+            favIDs = UserDefaults.standard.array(forKey: "favMovieArray") as! [Int]
+        }
+        
+        if favIDs.contains(movieID) {
+            favIDs.remove(element: movieID)
+            favOutlet.titleLabel?.font = UIFont.fontAwesome(ofSize: 30, style: .light)
+            favOutlet.setTitle(String.fontAwesomeIcon(name: .star), for: .normal)
+        }else{
+            favIDs.append(movieID)
+            favOutlet.titleLabel?.font = UIFont.fontAwesome(ofSize: 30, style: .solid)
+            favOutlet.setTitle(String.fontAwesomeIcon(name: .star), for: .normal)
+        }
+        UserDefaults.standard.set(favIDs, forKey: "favMovieArray")
+    }
+    
 
 }
 extension DetailMovieVC: UITableViewDelegate, UITableViewDataSource{
@@ -136,7 +166,7 @@ extension DetailMovieVC: UITableViewDelegate, UITableViewDataSource{
         view.tintColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.94)
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor =  UIColor(red: 0.52, green: 0.38, blue: 0.79, alpha: 1)
-        header.textLabel?.font = UIFont(name: "SFProText-Semibold", size: 13)
+        header.textLabel?.font = UIFont(name: "Futura-Medium", size: 13)
     
     }
 }

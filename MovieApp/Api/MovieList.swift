@@ -29,7 +29,7 @@ struct MovieList: SimpleApi{
 
 }
 extension SimpleApiClient {
-    func listMovie(language: String, page: Int) -> Observable<ListMovie>  {
+    func listMovie(language: String, page: Int) -> Observable<List>  {
         return request(api: MovieList(language: language, page: page))
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct ListMovie: Decodable {
+struct List: Decodable {
     
     var results: [Results]
     var total_pages: Int

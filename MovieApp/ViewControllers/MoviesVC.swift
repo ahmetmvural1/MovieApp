@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import SDWebImage
 import SVProgressHUD
+import FontAwesome_swift
 
 class MoviesVC: UIViewController,UICollectionViewDelegate,UIScrollViewDelegate , UICollectionViewDelegateFlowLayout {
     var pageNumber = 1
@@ -20,8 +21,14 @@ class MoviesVC: UIViewController,UICollectionViewDelegate,UIScrollViewDelegate ,
         super.viewDidLoad()
         
         getMovies(page: pageNumber)
+        if UserDefaults.standard.array(forKey: "favMovieArray") != nil{
+            favIDs = UserDefaults.standard.array(forKey: "favMovieArray") as! [Int]
+        }
+        
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        collectionView.reloadData()
+    }
   
     
     func getMovies(page:Int){
@@ -42,7 +49,8 @@ class MoviesVC: UIViewController,UICollectionViewDelegate,UIScrollViewDelegate ,
                
                 
             }
-            
+            self.collectionView.delegate = nil
+            self.collectionView.dataSource = nil
             self.CollectionViewSource()
         }) { (error) in
             self.alert(message: error.localizedDescription)
@@ -63,8 +71,7 @@ class MoviesVC: UIViewController,UICollectionViewDelegate,UIScrollViewDelegate ,
     }
 
     func CollectionViewSource(){
-        self.collectionView.delegate = nil
-        self.collectionView.dataSource = nil
+    
         let items = Observable.just(
             (0..<MovieArray.count).map { "\($0)" }
         )
@@ -74,15 +81,25 @@ class MoviesVC: UIViewController,UICollectionViewDelegate,UIScrollViewDelegate ,
                    cell.movieDesc.text = MovieArray[row].name
                    cell.movieRate.text = String(MovieArray[row].vote_average)
                    cell.movieImage.sd_setImage(with: URL(string: imageURL + MovieArray[row].poster_path))
-            if row == MovieArray.count - 1  && self.pageNumber != total_pages{
-                print(self.pageNumber)
-                print(total_pages)
+            
+            //favs
+            if favIDs.contains(MovieArray[row].id) {
+                cell.favIcon.image = UIImage.fontAwesomeIcon(name: .star, style: .solid, textColor: .yellow, size: CGSize(width: 40, height: 40), backgroundColor: .clear, borderWidth: 0, borderColor: .clear)
+                
+            }else{
+                cell.favIcon.image = UIImage.fontAwesomeIcon(name: .star, style: .light, textColor: .yellow, size: CGSize(width: 40, height: 40), backgroundColor: .clear, borderWidth: 0, borderColor: .clear)
+            }
+            
+           
+           //pagging
+            if row == MovieArray.count - 4  && self.pageNumber != total_pages{
                 self.pageNumber += 1
                 self.getMovies(page: self.pageNumber)
-            }
-               }.disposed(by: disposeBag)
-        
-               collectionView.rx.setDelegate(self).disposed(by: disposeBag)
+                }
+            }.disposed(by: disposeBag)
+       
+            
+            collectionView.rx.setDelegate(self).disposed(by: disposeBag)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)

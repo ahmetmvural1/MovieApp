@@ -9,6 +9,7 @@
 import UIKit
 
 class listCell: UICollectionViewCell {
+    @IBOutlet weak var favIcon: UIImageView!
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var movieRate: UILabel!
     @IBOutlet weak var movieDesc: UILabel!

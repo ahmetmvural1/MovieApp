@@ -22,7 +22,7 @@
 		FD9CC56223ED4A4400BB7FEC /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CC56123ED4A4400BB7FEC /* ApiClient.swift */; };
 		FD9CC56523ED4DB800BB7FEC /* AppVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CC56423ED4DB800BB7FEC /* AppVariables.swift */; };
 		FD9CC56723ED4E2C00BB7FEC /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CC56623ED4E2C00BB7FEC /* MovieList.swift */; };
-		FD9CC56923ED4F1700BB7FEC /* ListMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CC56823ED4F1700BB7FEC /* ListMovie.swift */; };
+		FD9CC56923ED4F1700BB7FEC /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CC56823ED4F1700BB7FEC /* List.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		FD9CC56123ED4A4400BB7FEC /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		FD9CC56423ED4DB800BB7FEC /* AppVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVariables.swift; sourceTree = "<group>"; };
 		FD9CC56623ED4E2C00BB7FEC /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
-		FD9CC56823ED4F1700BB7FEC /* ListMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMovie.swift; sourceTree = "<group>"; };
+		FD9CC56823ED4F1700BB7FEC /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +167,7 @@
 		FD9CC56023ED4A0900BB7FEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FD9CC56823ED4F1700BB7FEC /* ListMovie.swift */,
+				FD9CC56823ED4F1700BB7FEC /* List.swift */,
 				FD501D3D23F1722B0052B590 /* Detail.swift */,
 			);
 			path = Model;
@@ -297,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD9CC56923ED4F1700BB7FEC /* ListMovie.swift in Sources */,
+				FD9CC56923ED4F1700BB7FEC /* List.swift in Sources */,
 				FD9CC54C23ED3D5300BB7FEC /* MoviesVC.swift in Sources */,
 				FD501D3C23F1714A0052B590 /* DetailMovie.swift in Sources */,
 				FD9CC54823ED3D5300BB7FEC /* AppDelegate.swift in Sources */,
